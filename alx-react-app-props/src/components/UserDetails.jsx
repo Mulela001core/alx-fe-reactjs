@@ -2,7 +2,7 @@ import { useContext } from "react";
 import UserContext from "../UserContext/UserContext";
 
 
-function UserProfile() {
+function UserDetails() {
   const userData = useContext(UserContext);
 
   return (
