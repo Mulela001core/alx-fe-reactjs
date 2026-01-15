@@ -1,5 +1,5 @@
-import UserContext from "./UserContext";
-import UserProfile from "./UserProfile";
+import ProfilePage from './components/ProfilePage';
+import UserContext from './UserContext/UserContext';
 
 function App() {
   const userData = {
@@ -9,9 +9,10 @@ function App() {
 
   return (
     <UserContext.Provider value={userData}>
-      <UserProfile />
+      <ProfilePage />
     </UserContext.Provider>
   );
 }
 
 export default App;
+
