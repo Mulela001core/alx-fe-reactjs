@@ -1,5 +1,5 @@
-import UserProfile from "./UserProfile";
-import UserContext from "./context/UserContext";
+import UserProfile from "./components/UserProfile";
+import UserContext from "./components/UserContext";
 
 
 function App() {
