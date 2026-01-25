@@ -3,10 +3,12 @@ import { create } from "zustand";
 export const useRecipeStore = create((set) => ({
   // existing state
   recipes: [],
-
-  // NEW: search and filtering state
   searchTerm: "",
   filteredRecipes: [],
+
+  // ✅ NEW: favorites & recommendations state
+  favorites: [],
+  recommendations: [],
 
   // existing actions
   addRecipe: (newRecipe) =>
@@ -31,7 +33,7 @@ export const useRecipeStore = create((set) => ({
       recipes: recipes,
     }),
 
-  // NEW: search & filtering actions
+  // search & filtering actions
   setSearchTerm: (term) =>
     set({
       searchTerm: term,
@@ -45,4 +47,27 @@ export const useRecipeStore = create((set) => ({
           .includes(state.searchTerm.toLowerCase())
       ),
     })),
+
+  // ✅ NEW: favorites actions
+  addFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: [...state.favorites, recipeId],
+    })),
+
+  removeFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.filter((id) => id !== recipeId),
+    })),
+
+  // ✅ NEW: recommendations logic
+  generateRecommendations: () =>
+    set((state) => {
+      // Mock implementation based on favorites
+      const recommended = state.recipes.filter(
+        (recipe) =>
+          state.favorites.includes(recipe.id) && Math.random() > 0.5
+      );
+
+      return { recommendations: recommended };
+    }),
 }));

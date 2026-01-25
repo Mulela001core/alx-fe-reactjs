@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useRecipeStore } from "./recipeStore";
+import RecipeItem from "./RecipeItem";
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
