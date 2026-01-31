@@ -1,15 +1,7 @@
-# alx-fe-reactjs
+# Objective: 
+Begin building a GitHub User Search Application using React. This task focuses on setting up the project foundation, including creating the React app, installing necessary packages, and preparing the environment for further development.
 
-This repository contains my first React application created using **Vite** as part of the **ALX Frontend ReactJS** curriculum.
-
----
-
-## Project Description
-
-The goal of this project is to set up a basic React development environment using Vite.  
-It demonstrates how to:
-- Create a React app using Vite
-- Install dependencies
-- Run a local development server
+## Project Overview:
+The GitHub User Search Application will allow users to search for GitHub profiles using the GitHub API. It will feature a search input, display results including basic user information, and link to their GitHub profiles.
 
 
