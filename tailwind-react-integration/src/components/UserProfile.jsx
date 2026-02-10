@@ -16,7 +16,7 @@ function UserProfile() {
       "
     >
       <img
-        src="https://via.placeholder.com/150"
+        src="/src/assets/IMG_20210930_140057.jpg"
         alt="User"
         className="
           rounded-full
@@ -41,11 +41,11 @@ function UserProfile() {
           duration-300
         "
       >
-        John Doe
+        Emmanuel Mulela
       </h1>
 
       <p className="text-sm sm:text-sm md:text-base text-gray-600">
-        Developer at Example Co. Loves to write code and explore new technologies.
+        Developer at Emma & Co. Loves to write code and explore new technologies.
       </p>
     </div>
   );
