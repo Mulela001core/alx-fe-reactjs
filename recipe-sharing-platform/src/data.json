@@ -11,7 +11,7 @@
       "Bacon",
       "Black pepper"
     ],
-    "steps": [
+    "instructions": [
       "Boil pasta until al dente.",
       "Cook bacon until crispy.",
       "Mix eggs and cheese.",
@@ -21,14 +21,19 @@
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken cooked in a smooth, buttery and creamy tomato-based gravy.",
-    "image": "https://via.placeholder.com/300x200"
-  },
-  {
-    "id": 3,
-    "title": "Avocado Toast",
-    "summary": "Crispy toast topped with smashed avocado, olive oil, and chili flakes.",
-    "image": "https://via.placeholder.com/300x200"
+    "summary": "Chunks of grilled chicken cooked in a smooth, buttery tomato gravy.",
+    "image": "https://via.placeholder.com/300x200",
+    "ingredients": [
+      "Chicken",
+      "Tomato puree",
+      "Cream",
+      "Spices"
+    ],
+    "instructions": [
+      "Marinate the chicken.",
+      "Grill until cooked.",
+      "Prepare the sauce.",
+      "Combine and simmer."
+    ]
   }
 ]
-

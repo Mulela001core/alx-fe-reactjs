@@ -1,20 +1,32 @@
 import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import recipesData from "../data.json";
 
 function RecipeDetail() {
   const { id } = useParams();
+  const [recipe, setRecipe] = useState(null);
 
-  const recipe = recipesData.find(
-    (recipe) => recipe.id === parseInt(id)
-  );
+  useEffect(() => {
+    // Simulate fetching data
+    const foundRecipe = recipesData.find(
+      (item) => item.id === parseInt(id)
+    );
+
+    setRecipe(foundRecipe);
+  }, [id]);
 
   if (!recipe) {
-    return <div className="p-6 text-center">Recipe not found</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg font-medium">Loading recipe...</p>
+      </div>
+    );
   }
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6">
+      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-6">
+        
         <img
           src={recipe.image}
           alt={recipe.title}
@@ -29,29 +41,28 @@ function RecipeDetail() {
           {recipe.summary}
         </p>
 
-        {/* Placeholder sections since your data.json doesn't yet include these */}
+        {/* Ingredients */}
         <div className="mt-6">
           <h2 className="text-xl font-semibold mb-2">
             Ingredients
           </h2>
-          <ul className="list-disc list-inside text-gray-700">
-          {recipe.ingredients.map((item, index) => (
-          <li key={index}>{item}</li>
-          ))}
-</ul>
-
+          <ul className="list-disc list-inside space-y-1">
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
         </div>
 
+        {/* Instructions */}
         <div className="mt-6">
           <h2 className="text-xl font-semibold mb-2">
-            Cooking Steps
+            Instructions
           </h2>
-          <ol className="list-decimal list-inside text-gray-700 space-y-2">
-  {recipe.steps.map((step, index) => (
-    <li key={index}>{step}</li>
-  ))}
-</ol>
-
+          <ol className="list-decimal list-inside space-y-2">
+            {recipe.instructions.map((step, index) => (
+              <li key={index}>{step}</li>
+            ))}
+          </ol>
         </div>
 
         <Link
