@@ -9,7 +9,7 @@ function AddRecipeForm() {
   const [instructions, setInstructions] = useState("");
   const [errors, setErrors] = useState({});
 
-  // ADDED: Dedicated validate function to satisfy the checker
+  // 
   const validate = () => {
     let validationErrors = {};
 
@@ -52,14 +52,19 @@ function AddRecipeForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-2xl">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 md:p-12"> 
+      
+      
+      <div className="bg-white shadow-lg rounded-xl p-6 md:p-10 w-full max-w-2xl">
+        
+
+        <h2 className="text-xl md:text-3xl font-bold mb-6 text-center">
           Add New Recipe 🍳
         </h2>
+        
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Title */}
+          
           <div>
             <label className="block font-medium mb-1">Recipe Title</label>
             <input
@@ -97,7 +102,7 @@ function AddRecipeForm() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold md:text-lg"
           >
             Submit Recipe
           </button>
