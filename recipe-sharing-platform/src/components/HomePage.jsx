@@ -9,7 +9,18 @@ function HomePage() {
         Recipe Collection 🍽️
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="text-center mb-6">
+  <Link
+    to="/add-recipe"
+    className="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition"
+  >
+    + Add Recipe
+  </Link>
+</div>
+
+      
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {recipesData.map((recipe) => (
           <div
             key={recipe.id}
