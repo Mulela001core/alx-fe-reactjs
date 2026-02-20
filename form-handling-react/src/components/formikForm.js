@@ -2,7 +2,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 function FormikForm() {
-
   const initialValues = {
     username: "",
     email: "",
@@ -20,7 +19,7 @@ function FormikForm() {
   });
 
   const onSubmit = (values, { resetForm }) => {
-    console.log("Formik Submitted:", values);
+    console.log(values);
     alert("Registration successful!");
     resetForm();
   };
@@ -35,7 +34,6 @@ function FormikForm() {
         onSubmit={onSubmit}
       >
         <Form>
-
           <div>
             <label>Username:</label>
             <Field type="text" name="username" />
@@ -55,7 +53,6 @@ function FormikForm() {
           </div>
 
           <button type="submit">Register</button>
-
         </Form>
       </Formik>
     </div>
