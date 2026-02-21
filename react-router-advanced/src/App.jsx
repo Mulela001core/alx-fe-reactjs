@@ -1,41 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Navbar from "./components/NavBar";
-import ProtectedRoute from "./components/ProtectedRoute";
-
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import ProfileDetails from "./pages/ProfileDetails";
-import ProfileSettings from "./pages/ProfileSettings";
-import Login from "./pages/Login";
-import Post from "./pages/Post";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
 
 function App() {
-  const isAuthenticated = false; // simulate login
-
   return (
-    <div>
-      <Navbar />
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/profile">Profile</Link>
+      </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Profile />
-            </ProtectedRoute>
-          }
-        >
-          <Route path="details" element={<ProfileDetails />} />
-          <Route path="settings" element={<ProfileSettings />} />
-        </Route>
-
-        <Route path="/post/:id" element={<Post />} />
-        <Route path="/login" element={<Login />} />
+        { /* for nested routes */}
+        <Route path="/profile/*" element={<Profile />} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
 
